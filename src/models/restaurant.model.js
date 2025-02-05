@@ -34,6 +34,10 @@ const restaurantSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    gst_percentage: {
+      type: Number,
+      default: 0,
+    },
     subscription: {
       isSubscribed: {
         type: Boolean,
