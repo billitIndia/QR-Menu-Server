@@ -22,6 +22,10 @@ const restaurantSchema = new mongoose.Schema(
       trim: true,
       lowercase: true,
     },
+    restaurant_type: {
+      type: [String],
+      enum: ["Chinese", "Arabic", "Indian", "North Indian", "South Indian", "Italian", "Mexican", "Thai", "Japanese", "French", "Mediterranean", "Korean", "Vietnamese", "Greek", "Turkish"],
+    },
     phone_number: { type: String, default: null },
     wifi_name: { type: String, default: null },
     wifi_password: { type: String, default: null },

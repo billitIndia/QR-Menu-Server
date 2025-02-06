@@ -55,31 +55,12 @@ exports.getRestaurant = async (id) => {
 
 exports.updateRestaurantDetails = async (restaurantId, updateData) => {
   try {
-    const allowedFields = [
-      "name", 
-      "logo", 
-      "coverImage",
-      "phone_number",
-      "wifi_name",
-      "wifi_password",
-      "instagram_handle",
-      "instagram_url"
-    ];
 
-    const filteredUpdate = Object.keys(updateData)
-      .filter((key) => allowedFields.includes(key))
-      .reduce((obj, key) => {
-        obj[key] = updateData[key];
-        return obj;
-      }, {});
-
-    if (Object.keys(filteredUpdate).length === 0) {
-      throw new AppError("No valid fields to update", 400);
-    }
-
+    console.log(updateData);
+    
     const restaurant = await Restaurant.findByIdAndUpdate(
       restaurantId,
-      filteredUpdate,
+      updateData,
       { new: true, runValidators: true }
     );
 

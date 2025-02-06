@@ -32,6 +32,7 @@ exports.updateRestaurant = async (req, res, next) => {
       wifi_password: req.body.wifi_password,
       instagram_handle: req.body.instagram_handle,
       instagram_url: req.body.instagram_url,
+      restaurant_type: req.body.restaurant_type,
       gst_percentage: req.body.gst_percentage,
     };
 
