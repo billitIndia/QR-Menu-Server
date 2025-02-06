@@ -20,7 +20,7 @@ const startServer = async () => {
     
     const io = socketIO(server, {
       cors: {
-        origin: ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:5173"],
+        origin: ["http://localhost:3000", "http://localhost:5173", "https://menu.billit.in/"],
         methods: ["GET", "POST"],
         credentials: true
       }

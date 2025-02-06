@@ -47,24 +47,16 @@ const restaurantSchema = new mongoose.Schema(
         type: Boolean,
         default: false,
       },
-      planType: {
-        type: String,
-        enum: ["1-month", "6-month", "12-month"],
-        required: false,
-      },
+      plan_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Plan",
+        required: true,
+    },
       planAmount: {
         type: Number,
         required: false,
       },
-      razorpayCustomerId: {
-        type: String,
-        required: false,
-      },
-      razorpaySubscriptionId: {
-        type: String,
-        required: false,
-      },
-      razorpayPaymentId: {
+      paytmPaymentId: {
         type: String,
         required: false,
       },

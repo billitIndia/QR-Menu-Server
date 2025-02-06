@@ -5,6 +5,8 @@ const categoryRoutes = require("./category.routes");
 const itemRoutes = require("./item.routes");
 const uploadRoutes = require("./upload.routes");
 const analyticsRoutes = require('./analytics.routes');
+const planRoutes = require("./plan.routes");
+const userRoutes = require("./user.routes");
 const router = express.Router();
 
 router.use("/auth", authRoutes);
@@ -12,5 +14,7 @@ router.use("/restaurant", restaurantRoutes);
 router.use("/categories", categoryRoutes);
 router.use("/items", itemRoutes);
 router.use("/upload", uploadRoutes);
-router.use('/api/analytics', analyticsRoutes);
+router.use('/analytics', analyticsRoutes);
+router.use('/plans', planRoutes);
+router.use('/users', userRoutes);
 module.exports = router;
